@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html >
+<head>
+<title>Blackjack</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link href="default.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<!-- Header. -->
+<div id="header">
+  <marquee behavior="alternate" scrollamount="15">Blackjack</marquee>
+</div>
+
+<!-- Dealer's area. -->
+
+<div id="dealer" class="playingField">
+  <div class="textBox name">Dealer</div>
+  <div id="dealerScore" class="textBox">&nbsp;</div>
+  <div id="dealerCards" class="cardArea"></div>
+</div>
+
+<!-- Main player's area. -->
+
+<div id="player0" class="playingField">
+  <div class="textBox name">Player</div>
+  <div id="player0Score"  class="textBox">&nbsp;</div>
+  <div id="player0Bet"    class="textBox dollars">&nbsp;</div>
+  <div id="player0Result" class="textBox result">&nbsp;</div>
+  <div id="player0Cards"  class="cardArea"></div>
+</div>
+
+<!-- Areas for the player's split hands. -->
+
+<div id="player1" class="playingField" style="display:none;">
+  <div class="textBox name">Player</div>
+  <div id="player1Score"  class="textBox">&nbsp;</div>
+  <div id="player1Bet"    class="textBox dollars">&nbsp;</div>
+  <div id="player1Result" class="textBox result">&nbsp;</div>
+  <div id="player1Cards"  class="cardArea"></div>
+</div>
+
+<div id="player2" class="playingField" style="display:none;">
+  <div class="textBox name">Player</div>
+  <div id="player2Score"  class="textBox">&nbsp;</div>
+  <div id="player2Bet"    class="textBox dollars">&nbsp;</div>
+  <div id="player2Result" class="textBox result">&nbsp;</div>
+  <div id="player2Cards"  class="cardArea"></div>
+</div>
+
+<div id="player3" class="playingField" style="display:none;">
+  <div class="textBox name">Player</div>
+  <div id="player3Score"  class="textBox">&nbsp;</div>
+  <div id="player3Bet"    class="textBox dollars">&nbsp;</div>
+  <div id="player3Result" class="textBox result">&nbsp;</div>
+  <div id="player3Cards"  class="cardArea"></div>
+</div>
+
+<!-- Game buttons. -->
+
+<form id="controls" action="">
+  <div id="controlsArea">
+    <div id="credits" class="textBox dollars">&nbsp;</div>
+    <div id="default" class="textBox dollars">&nbsp;</div>
+    <input id="deal"      class="button" type="reset" value="Deal"         onclick="startRound();return false;" />
+    <input id="decrease"  class="button" type="reset" value="Decrease Bet" onclick="changeBet(-5);return false;" />
+    <input id="increase"  class="button" type="reset" value="Increase Bet" onclick="changeBet(+5);return false;" />
+    <input id="split"     class="button" type="reset" value="Split"     onclick="playerSplit();return false;"     disabled="disabled" />
+    <input id="double"    class="button" type="reset" value="Double"    onclick="playerDouble();return false;"    disabled="disabled" />
+    <input id="surrender" class="button" type="reset" value="Surrender" onclick="playerSurrender();return false;" disabled="disabled" />
+    <input id="hit"       class="button" type="reset" value="Hit"        onclick="playerHit();return false;"   disabled="disabled" />
+    <input id="stand"     class="button" type="reset" value="Stand"      onclick="playerStand();return false;" disabled="disabled" />
+  </div>
+</form>
+
+<script src="Card.js"></script>
+
+</body>
+</html>
